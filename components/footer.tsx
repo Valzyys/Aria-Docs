@@ -12,16 +12,16 @@ export function Footer() {
             Build by{" "}
             <Link
               className="px-1 underline underline-offset-2"
-              href="https://github.com/nisabmohd"
+              href="https://github.com/zenova-id"
             >
-              nisabmohd
+             valzyy
             </Link>
             . The source code is available on{" "}
             <Link
               className="px-1 underline underline-offset-2"
-              href="https://github.com/nisabmohd/Aria-Docs"
+              href="https://www.npmjs.com/package/@jkt48connect/cli"
             >
-              GitHub
+              npmjs
             </Link>
             .
           </p>
