@@ -15,19 +15,19 @@ export default function Home() {
         <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
       </Link>
       <h1 className="text-[2.4rem] leading-10 sm:leading-[4.5rem] font-bold mb-4 sm:text-6xl text-left sm:text-center">
-        API dan CLI untuk mendapatkan informasi terbaru seputar JKT48 dengan mudah!
+        Easily access the latest JKT48 information with our API and CLI!
       </h1>
       <p className="mb-8 sm:text-lg max-w-[800px] text-muted-foreground text-left sm:text-center">
-        JKT48Connect menyediakan REST API dan CLI yang memungkinkan Anda mendapatkan 
-        informasi terbaru tentang JKT48, termasuk jadwal live streaming, event, dan masih banyak lagi.
-        Dirancang untuk pengembang yang ingin mengintegrasikan data JKT48 ke dalam aplikasi mereka.
+        JKT48Connect provides a powerful REST API and CLI tool, allowing you to retrieve 
+        the latest updates about JKT48, including live streaming schedules, events, and more.
+        Designed for developers who want to integrate JKT48 data into their applications.
       </p>
       <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
         <Link
           href={`/docs${page_routes[0].href}`}
           className={buttonVariants({ className: "px-6", size: "lg" })}
         >
-          Mulai Sekarang
+          Get Started
         </Link>
         <Link
           href="/blog"
@@ -37,7 +37,7 @@ export default function Home() {
             size: "lg",
           })}
         >
-          Baca Blog
+          Read Blog
         </Link>
       </div>
       <span className="sm:flex hidden flex-row items-start sm:gap-2 gap-0.5 text-muted-foreground text-md mt-9 -mb-12 max-[800px]:mb-12 font-code sm:text-base text-sm font-medium border rounded-full p-2.5 px-5 bg-muted/55">
