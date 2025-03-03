@@ -1,72 +1,91 @@
+
 ---
 title: Installation
-description: Installation guide for our application.
+description: Installation guide for JKT48Connect CLI and REST API.
 ---
 
-Setting up AriaDocs is straightforward, with options to clone the repository or use the convenient `npx` command. AriaDocs requires [Node.js](https://nodejs.org/) version 18 or higher for optimal performance.
+Setting up JKT48Connect is simple, with options to install the CLI module and access the REST API. Ensure you have [Node.js](https://nodejs.org/) version 18 or higher for optimal performance.
 
-## Clone Repository
-To get started, you can clone the AriaDocs repository directly from GitHub. 
+## Install JKT48Connect CLI
+To use the JKT48Connect CLI, install it globally via npm:
+
 <Stepper>
-  <StepperItem title="Step 1: Clone the AriaDocs Repository">
-    Begin by cloning the AriaDocs repository from GitHub:
+  <StepperItem title="Step 1: Install JKT48Connect CLI">
+    Run the following command to install the CLI globally:
 
     ```plaintext
-    git clone https://github.com/nisabmohd/Aria-Docs.git
+    npm install -g @jkt48connect/cli
     ```
   </StepperItem>
 
-  <StepperItem title="Step 2: Access the Project Directory">
-    After cloning, navigate into the project directory to start setting up:
+  <StepperItem title="Step 2: Verify Installation">
+    Check if the CLI is installed correctly by running:
 
     ```plaintext
-    cd Aria-Docs
+    jkt48connect 
     ```
   </StepperItem>
 
-  <StepperItem title="Step 3: Install Required Dependencies">
-    Install all necessary project dependencies with npm:
+  <StepperItem title="Step 3: Authenticate">
+    Before using the CLI, authenticate with your API key:
 
-    <Note title="Remember">
-      To support React 19, package maintainers will need to test and update their packages to include React 19 as a peer dependency. This is already in progress.
+    ```plaintext
+    jkt48connect {command} {apikey}
+    ```
+
+    <Note title="API Key Required">
+      You must obtain an API key from the JKT48Connect platform to use this service.
     </Note>
-
-    ```plaintext
-    npm install
-    ```
-  </StepperItem>
-
-  <StepperItem title="Step 4: Launch the Development Server">
-    Finally, start the development server to view the project locally:
-
-    ```plaintext
-    npm run dev
-    ```
   </StepperItem>
 </Stepper>
 
-## Quick Setup with npx
+## Using the REST API
 
-For a faster setup, use the `npx` command to create a new AriaDocs project in one step:
+JKT48Connect also provides a powerful REST API for integrating JKT48-related data into your applications.
 
-```plaintext
-npx create-aria-doc <project-directory>
-```
-
-**Command Output:**
+### Base URL
+All API requests should be made to the following base URL:
 
 ```plaintext
-Creating a new AriaDocs project in /path/to/your/project from the master branch...
-Cloning Master (Full Documentation)...
-AriaDocs project successfully created in /path/to/your/project!
-
-Next steps:
-1. Navigate to your project directory:
-   cd <project-directory>
-2. Install dependencies:
-   npm install
-3. Start the development server:
-   npm run dev
+https://api.jkt48connect.my.id
 ```
 
-With this setup, you’ll have a ready-to-use AriaDocs instance to start building your documentation.
+### Example: Fetch Live Streaming Data
+To fetch the latest live streaming data, send a GET request to:
+
+```plaintext
+GET /api/live?api_key=YOUR_API_KEY
+```
+
+**Response Example:**
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "member": "Shani Indira",
+      "title": "Shani's Live",
+      "startTime": "2025-03-03T12:00:00Z"
+    }
+  ]
+}
+```
+
+## Quick Start
+
+For a quick setup, follow these steps:
+
+1. Install the CLI:
+   ```plaintext
+   npm install -g @jkt48connect/cli
+   ```
+2. Authenticate:
+   ```plaintext
+   jkt48connect 
+   ```
+3. Fetch live streaming data:
+   ```plaintext
+   jkt48connect live YOUR_API_KEY
+   ```
+
+With this setup, you can easily access JKT48Connect's features through both the CLI and REST API.
