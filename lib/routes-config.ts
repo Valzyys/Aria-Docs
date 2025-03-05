@@ -25,6 +25,10 @@ export const ROUTES: EachRoute[] = [
     title: "Package",
     href: "/package",
   },
+  {
+    title: "Realtime Live",
+    href: "/live",
+  },
 ];
 
 type Page = { title: string; href: string };
