@@ -18,16 +18,8 @@ export const NAVLINKS = [
     href: "/blog",
   },
   {
-    title: "Examples",
-    href: "#",
-  },
-  {
-    title: "Guides",
-    href: "#",
-  },
-  {
-    title: "Community",
-    href: "https://github.com/nisabmohd/Aria-Docs/discussions",
+    title: "Dashboard",
+    href: "https://dash.jkt48connect.my.id",
   },
 ];
 
