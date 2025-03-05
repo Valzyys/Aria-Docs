@@ -21,6 +21,11 @@ export const ROUTES: EachRoute[] = [
       },
     ],
   },
+  {
+    title: "Package",
+    href: "/package",
+    noLink: true,
+  },
 ];
 
 type Page = { title: string; href: string };
