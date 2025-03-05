@@ -1,0 +1,27 @@
+---
+title: Realtime Live
+description: This is a guide page on how to retrieve live realtime data from jkt48 members using the jkt48connect api.
+---
+## Guide
+For this live section, it can be used for many projects, for example, to be used as a feature on WhatsApp bots, discord bots, and also websites. For example, some of the codes are as follows:
+<Note type="note" title="Note">
+ This requires a premium apikey. To get an apikey, you can visit the [dashboard website](https://dash.jkt48connect.my.id) and to buy a premium, you can do it on the dashboard.
+</Note>
+```javascript:example.js showLineNumbers {1-13}
+const { getLive } = require("@jkt48connect/cli");
+
+// API Key yang digunakan
+const apiKey = "YOUR_API_KEY"; // Ganti dengan API Key yang valid
+
+async function fetchLiveData() {
+    try {
+        const liveData = await getLive(apiKey);
+        console.log("Data Live Streaming:", liveData);
+    } catch (error) {
+        console.error("Gagal mengambil data live:", error.message);
+    }
+}
+
+// Panggil fungsi untuk mendapatkan data live
+fetchLiveData();
+``` 
