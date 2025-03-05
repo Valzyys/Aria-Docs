@@ -20,10 +20,10 @@ const monoFont = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  title: "JC4Docs",
+  metadataBase: new URL("https://docs.jkt48connect.my.id/"),
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "JC4Docs adalah platform dokumentasi open-source yang dibuat dengan Next.js, dirancang khusus untuk memberikan panduan lengkap dalam menggunakan module **JKT48Connect API**. Dengan desain yang responsif dan modern, JC4Docs memastikan pengalaman pengguna yang optimal dalam mengakses dokumentasi API, contoh penggunaan, serta panduan integrasi secara detail.",
 };
 
 export default function RootLayout({
