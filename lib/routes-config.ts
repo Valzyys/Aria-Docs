@@ -24,7 +24,6 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Package",
     href: "/package",
-    noLink: true,
   },
 ];
 
