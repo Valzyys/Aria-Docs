@@ -26,8 +26,24 @@ export const ROUTES: EachRoute[] = [
     href: "/package",
   },
   {
-    title: "Realtime Live",
+    title: "Live",
     href: "/live",
+    noLink: true,
+    items: [
+      { title: "Now Live", href: "/nowlive", tag: "🔥" },
+      {
+        title: "Recent Live",
+        href: "/recentlive",
+      },
+      {
+        title: "IDN Live",
+        href: "/idnlive",
+      },
+      {
+        title: "Showroom Live",
+        href: "/srlive",
+      },
+    ],
   },
 ];
 
