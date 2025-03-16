@@ -1,0 +1,72 @@
+
+---
+title: Recent Live
+description: This is a guide page on how to retrieve recent live data from JKT48 members using the JKT48Connect API.
+---
+
+## Guide
+The `getRecentLive` function allows you to retrieve data about the most recent live streams from JKT48 members.  
+This feature can be used in various projects, such as WhatsApp bots, Discord bots, and websites.  
+Below is an example of how to use it:
+
+<Note type="note" title="Note">
+  This requires a premium API key. To get an API key, you can visit the [dashboard website](https://dash.jkt48connect.my.id) and purchase a premium key from the dashboard.
+</Note>
+
+```javascript:example.js showLineNumbers {1-13}
+const { getRecentLive } = require("@jkt48connect/cli");
+
+// API Key yang digunakan
+const apiKey = "YOUR_API_KEY"; // Ganti dengan API Key yang valid
+
+async function fetchRecentLiveData() {
+    try {
+        const recentLiveData = await getRecentLive(apiKey);
+        console.log("Data Recent Live Streaming:", recentLiveData);
+    } catch (error) {
+        console.error("Gagal mengambil data recent live:", error.message);
+    }
+}
+
+// Panggil fungsi untuk mendapatkan data recent live
+fetchRecentLiveData();
+```
+
+## Output Example
+```json
+[
+  {
+    "_id": "67d654d231425335685129db",
+    "data_id": "1742098356510067",
+    "member": {
+      "name": "Oline / オリヌ（JKT48）",
+      "nickname": "Oline",
+      "img_alt": "https://res.cloudinary.com/haymzm4wp/image/upload/v1730447288/assets/kabesha/oktober_2024/oline_manuel.jpg",
+      "img": "https://static.showroom-live.com/image/room/cover/f27cc7e31f0e6551324bddb0cfe6981764e160fcef0731e53af327c34f721386_m.jpeg?v=1712491154",
+      "url": "oline",
+      "is_graduate": false,
+      "is_official": false
+    },
+    "created_at": "2025-03-16T04:33:57.658Z",
+    "live_info": {
+      "duration": 1281658,
+      "viewers": {
+        "num": 15694,
+        "is_excitement": true
+      },
+      "date": {
+        "start": "2025-03-16T04:12:36.000Z",
+        "end": "2025-03-16T04:33:57.658Z"
+      }
+    },
+    "gift_rate": 109.84,
+    "room_id": 510067,
+    "points": 44459,
+    "type": "showroom",
+    "total_gift": "Rp 4.883.376"
+  }
+]
+```
+
+This data provides detailed information about the latest live streams, including the member's name, profile images, duration of the stream, number of viewers, and total gifts received.  
+Use this data to build custom applications that monitor JKT48's live streaming activities in real-time.
