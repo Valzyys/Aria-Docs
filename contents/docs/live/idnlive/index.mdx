@@ -1,0 +1,91 @@
+---
+title:  IDN Live
+description: A complete guide on retrieving live streaming data from IDN using JKT48Connect API.
+---
+
+## Introduction
+The `getIdn` feature in the JKT48Connect API allows developers to fetch live streaming data conducted by JKT48 members on the IDN platform. This feature is useful for applications that need real-time information on ongoing live streams.
+
+Developers can use this feature to:  
+- Display a list of ongoing IDN live streams in their applications.  
+- Retrieve detailed information about each live stream, including member details, images, start and end times, and streaming URLs.  
+- Monitor live streaming trends of JKT48 members on the IDN platform for analytics and reporting purposes.  
+
+<Note type="note" title="Important Note">
+This feature **requires a premium API key**. You can obtain an API key by visiting the [JKT48Connect dashboard](https://dash.jkt48connect.my.id). To purchase a premium API key, complete the transaction through the dashboard.
+</Note>
+
+---
+
+## How to Use `getIdn`
+Below is an example of how to retrieve IDN live streaming data using **Node.js**:
+
+```javascript:example.js showLineNumbers {1-15}
+const { getIdn } = require("@jkt48connect/cli");
+
+// Enter your API key here
+const apiKey = "YOUR_API_KEY"; // Replace with a valid API key
+
+async function fetchIdnLiveData() {
+    try {
+        // Calling getIdn function to fetch live IDN data
+        const liveData = await getIdn(apiKey);
+        
+        // Displaying the result in the console
+        console.log("IDN Live Streaming Data:", liveData);
+    } catch (error) {
+        console.error("Failed to retrieve IDN live data:", error.message);
+    }
+}
+
+// Executing the function to get IDN live data
+fetchIdnLiveData();
+```
+
+---
+
+## Data Structure
+When the `getIdn` function is called, the API returns a list of ongoing IDN live streams. The response data typically includes the following fields:
+
+- **`member`**: Information about the JKT48 member conducting the live stream, including:
+  - `name` → Full name of the member.
+  - `nickname` → Member’s nickname.
+  - `img` → URL of the live stream cover image.
+  - `img_alt` → URL of the member's profile image.
+  - `url` → Unique ID of the member in the JKT48Connect system.
+  - `is_graduate` → Indicates whether the member has graduated.
+  - `is_official` → Indicates whether the live stream is an official JKT48 broadcast or an individual stream.
+
+- **`live_info`**: Information related to the live stream, including:
+  - `duration` → Live stream duration in milliseconds.
+  - `viewers.num` → Number of viewers watching the live stream.
+  - `viewers.is_excitement` → Indicates whether the live stream is highly interactive.
+  - `date.start` → Start time of the live stream in UTC format.
+  - `date.end` → End time of the live stream in UTC format.
+
+- **`idn`**: Specific data related to IDN live streaming, including:
+  - `id` → Unique ID of the live stream on the IDN platform.
+  - `username` → IDN username of the member conducting the live stream.
+  - `slug` → Unique identifier for the live stream.
+  - `title` → Title of the live stream.
+  - `image` → URL of the live stream cover image.
+
+- **`room_id`**: Unique ID of the live streaming room.
+- **`type`**: Indicates that the live stream originates from the **IDN** platform.
+
+---
+
+## Expected Output
+Currently, there is no available sample data for `getIdn`. However, its response format is expected to be similar to `getRecentLive`. If you need an example, try calling the API using the code provided above.
+
+For further details, refer to the [API Documentation](https://dash.jkt48connect.my.id/docs).
+
+---
+
+## Conclusion
+The `getIdn` function provides an efficient way to retrieve live streaming information from IDN. With this data, you can:  
+- Display a real-time list of live streams in your application.  
+- Provide detailed information about each live stream.  
+- Analyze JKT48 members' live streaming trends on the IDN platform.  
+
+Ensure that you have a **premium API key** to access this feature without restrictions.  
