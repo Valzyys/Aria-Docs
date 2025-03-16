@@ -30,7 +30,7 @@ export const ROUTES: EachRoute[] = [
     href: "/live",
     noLink: true,
     items: [
-      { title: "Now Live", href: "/nowlive", tag: "🔥" },
+      { title: "Now Live", href: "/nowlive", tag: "TOP" },
       {
         title: "Recent Live",
         href: "/recentlive",
